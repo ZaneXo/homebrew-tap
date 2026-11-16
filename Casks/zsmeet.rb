@@ -15,7 +15,7 @@ cask "zsmeet" do
   end
 
   auto_updates true
-  depends_on macos: ">= :sonoma"
+  depends_on macos: (MacOSRequirement.respond_to?(:parse) ? :sonoma : ">= :sonoma")
 
   app "zsmeet.app"
 
